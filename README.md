@@ -1,0 +1,4 @@
+# AddContacts
+这是一个将本地excel表格中联系人批量导入系统通讯录的代码。注意：excel中格式要按照代码中的来，不然就要你自己改了。
+
+项目很简单，主要运用了rxjava2、rxpermissions，项目是用Kotlin写的，里面有一个基于BaseRecyclerViewAdapterHelper封装的DataBinding通用适配器，用起来很方便。
