@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.wanzi.addcontacts"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation files('libs/jxl.jar')
+
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support:cardview-v7:26.1.0'
+
+    kapt "com.android.databinding:compiler:3.0.1"
+
+    // RxPermissions
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+    // RxJava
+    compile 'io.reactivex.rxjava2:rxjava:2.1.10'
+    // RxAndroid
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    // 协程
+    compile 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.16'
+    // BaseRecyclerViewAdapterHelper
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.33'
+    // dialogs
+    compile 'com.afollestad.material-dialogs:core:0.9.5.0'
+}
